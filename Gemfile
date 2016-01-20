@@ -1,7 +1,15 @@
 source 'https://rubygems.org'
 
 gem "haml-rails", "~> 0.9"
+
 gem 'bootstrap-sass',       '3.2.0.0'
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
+end
+
+gem 'capybara'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 # Use sqlite3 as the database for Active Record
