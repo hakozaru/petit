@@ -1,18 +1,8 @@
 source 'https://rubygems.org'
 
 gem "haml-rails", "~> 0.9"
-
-gem 'bootstrap-sass',       '3.2.0.0'
-
-group :development, :test do
-  gem 'rspec-rails', '~> 3.0'
-end
-
-gem 'hirb'
-gem 'hirb-unicode' # => HirbのUnicode対応版。日本語が入っていても結果がずれないようになります。
-gem 'pry-rails'
-
-gem 'capybara'
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'faml'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
@@ -48,6 +38,15 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'rspec-rails', '~> 3.0'
+  gem 'pry-rails'
+  gem 'hirb'
+  gem 'hirb-unicode' # => HirbのUnicode対応版。日本語が入っていても結果がずれないようになります。
+  gem 'pry-rails'
+end
+
+group :test do
+  gem 'capybara'
 end
 
 group :development do
