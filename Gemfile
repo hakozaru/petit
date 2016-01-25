@@ -8,6 +8,10 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
 end
 
+gem 'hirb'
+gem 'hirb-unicode' # => HirbのUnicode対応版。日本語が入っていても結果がずれないようになります。
+gem 'pry-rails'
+
 gem 'capybara'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
