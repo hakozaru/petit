@@ -1,0 +1,14 @@
+%h1 Users#new
+
+= form_for @user, url: users_create_path do |f|
+
+  %p
+    = f.label :name
+    = f.text_field :name
+
+  %p
+    = f.label :email
+    = f.text_field :email
+
+  .actions
+    = f.submit 'Sign up'
