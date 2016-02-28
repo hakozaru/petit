@@ -5,8 +5,13 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.save
-    redirect_to signup_path
+    if @user.save
+      flash[:success] = "welcome!"
+      redirect_to root_path
+    else
+      flash[:fail] = "One more!"
+      render 'new'
+    end
   end
 
   private
