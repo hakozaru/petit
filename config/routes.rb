@@ -6,9 +6,11 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  post 'users/create'
+  resources :users
+
+  #post 'users/create'
   get 'signup' => 'users#new'
   get 'signin' => 'sessions#new'
-  post 'signin' => 'session#create'
+  post 'signin' => 'sessions#create'
   get 'signout' => 'sessions#destroy'
 end
