@@ -2,11 +2,11 @@ Rails.application.routes.draw do
   #root 'posts#index'
   root 'petit#index'
 
-  resources :posts do
-    resources :comments
+  resources :users do
+    resources :posts do
+      resources :comments
+    end
   end
-
-  resources :users
 
   #post 'users/create'
   get 'signup' => 'users#new'
