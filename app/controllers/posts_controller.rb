@@ -2,23 +2,27 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
+    @user = User.find_by(id: params[:user_id])
     @posts = Post.all
   end
 
   def show
+    @user = User.find_by(id: params[:user_id])
   end
 
   def new
+    @user = User.find_by(id: params[:user_id])
     @post = Post.new
   end
 
   def edit
+    @user = User.find_by(id: params[:user_id])
   end
 
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to @post
+      redirect_to user_posts_path
     else
       render 'new'
     end
