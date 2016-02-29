@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(name: params[:session][:name])
     if @user
       log_in @user
+      flash[:success] = 'Welcome !'
       redirect_to @user
     else
       flash.now[:invalid] = 'ログインに失敗しました'
