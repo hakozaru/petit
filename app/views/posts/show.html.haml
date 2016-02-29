@@ -13,11 +13,15 @@
   = @post.tfield
 
 %p
+  [ Comments ]
   - @post.comment.each do |c|
-    %p= c.body
+    %li
+      %p
+      = c.body
+      = c.created_at.to_s.split(' ')[0..1]
 
 = render 'comment/form'
 
 = link_to 'Edit', edit_user_post_path(@user, @post)
 |
-= #link_to 'Back', posts_path
+= link_to 'Back', user_posts_path
