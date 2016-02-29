@@ -11,7 +11,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:success] = "welcome!"
-      redirect_to root_path
+      log_in(@user)
+      redirect_to user_path(@user)
     else
       flash[:fail] = "One more!"
       render 'new'
