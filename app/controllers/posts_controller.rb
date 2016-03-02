@@ -1,26 +1,31 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :user_check_for_posts
 
   def index
-    @user = User.find_by(id: params[:user_id])
-    @posts = Post.where(user_id: params[:user_id]).all
+    @user = User.find_by(id: session[:user_id])
+    @posts = Post.where(user_id: session[:user_id]).all
   end
 
   def show
-    @user = User.find_by(id: params[:user_id])
+    @user = User.find_by(id: session[:user_id])
+    if @post == nil
+      flash[:could_not_find_post] = "記事が見つかりません"
+      redirect_to user_posts_path
+    end
   end
 
   def new
-    @user = User.find_by(id: params[:user_id])
+    @user = User.find_by(id: session[:user_id])
     @post = Post.new
   end
 
   def edit
-    @user = User.find_by(id: params[:user_id])
+    @user = User.find_by(id: session[:user_id])
   end
 
   def create
-    @user = User.find_by(id: params[:user_id])
+    @user = User.find_by(id: session[:user_id])
     @post = @user.post.new(post_params)
     if @post.save
       redirect_to user_posts_path
@@ -44,7 +49,8 @@ class PostsController < ApplicationController
 
   private
   def set_post
-    @post = Post.find(params[:id])
+    @post = Post.where(user_id: session[:user_id]).find_by(id: params[:id])
+    #@post = Post.find(session[:user_id])
   end
 
   def post_params
