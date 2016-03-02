@@ -7,9 +7,11 @@
     = csrf_meta_tags
 
   %body
-  - flash.each do |fm, f|
-    %div= f
+  - flash.each do |flash_message, flash|
+    %div{class: flash_message}= flash
 
-  = link_to "profile", current_user
+  - if logged_in?
+    = link_to "profile", current_user
+    = link_to "logout", signout_path
 
   = yield
