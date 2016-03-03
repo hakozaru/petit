@@ -1,0 +1,18 @@
+%h1 Users#new
+
+= form_for @user do |f|
+
+  %p
+    = f.label :name
+    = f.text_field :name
+
+  %p
+    = f.label :email
+    = f.text_field :email
+
+  .actions
+    = f.submit '登録！'
+
+%p
+  User?
+  = link_to 'ログイン', signin_path

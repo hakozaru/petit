@@ -1,0 +1,17 @@
+%h1 Sessions#new
+
+= form_for :session, url: signin_path do |f|
+  %p
+    = f.label :name
+    = f.text_field :name
+
+  %p
+    = f.label :email
+    = f.text_field :email
+
+  %p
+    = f.submit 'ログイン'
+
+%p
+  New User?
+  = link_to '新規登録', signup_path

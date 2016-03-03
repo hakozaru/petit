@@ -13,10 +13,10 @@
         %td= post.title
         %td= post.name
         %td= post.tfield
-        %td= link_to 'Show', post
-        %td= link_to 'Edit', edit_post_path(post)
-        %td= link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to 'Show', user_post_path(@user, post)
+        %td= link_to 'Edit', edit_user_post_path(@user, post)
+        %td= link_to 'Destroy', user_post_path(@user, post), method: :delete, data: { :confirm => 'Are you sure?' }
 
 %br
 
-= link_to 'New Post', new_post_path
+= link_to 'New Post', new_user_post_path

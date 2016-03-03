@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %title Petit
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': true
+    = javascript_include_tag 'application', 'data-turbolinks-track': true
+    = csrf_meta_tags
+
+  %body
+  - flash.each do |flash_message, flash|
+    %div{class: flash_message}= flash
+
+  - if logged_in?
+    = link_to "profile", current_user
+    = link_to "logout", signout_path
+
+  = yield
