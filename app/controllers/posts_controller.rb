@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :user_check_for_posts
+  before_action :user_check
 
   def index
     @user = User.find_by(id: session[:user_id])
