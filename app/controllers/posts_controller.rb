@@ -50,7 +50,6 @@ class PostsController < ApplicationController
   private
   def set_post
     @post = Post.where(user_id: session[:user_id]).find_by(id: params[:id])
-    #@post = Post.find(session[:user_id])
   end
 
   def post_params
