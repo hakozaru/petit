@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
-  #root 'posts#index'
   root 'petit#index'
 
-  resources :users do
+  resources :users, only: [:show, :create] do
     resources :posts do
-      resources :comments
+      resources :comments, only: [:create]
     end
   end
 
-  #post 'users/create'
   get 'signup' => 'users#new'
   get 'signin' => 'sessions#new'
   post 'signin' => 'sessions#create'
