@@ -8,6 +8,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
     if @post == nil
       flash[:could_not_find_post] = "記事が見つかりません"
       redirect_to user_posts_path
