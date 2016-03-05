@@ -25,8 +25,13 @@ class PostsController < ApplicationController
   def create
     @post = @user.post.new(post_params)
     if @post.save
-      redirect_to user_posts_path
+      redirect_to user_post_path(@user, @post)
     else
+      if @post.errors.any?
+        @post.errors.full_messages.each_with_index do |e, i|
+          flash.now["error_#{i+1}"] = e
+        end
+      end
       render 'new'
     end
   end
