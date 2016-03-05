@@ -17,13 +17,17 @@ class UsersController < ApplicationController
       log_in(@user)
       redirect_to user_path(@user)
     else
-      flash[:fail] = "One more!"
+      if @user.errors.any?
+        @user.errors.full_messages.each_with_index do |e, i|
+          flash.now["error_#{i+1}"] = e
+        end
+      end
       render 'new'
     end
   end
 
   private
   def user_params
-    params.require(:user).permit(:name, :email)
+    params.require(:user).permit(:name, :password)
   end
 end
