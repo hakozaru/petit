@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem "haml-rails", "~> 0.9"
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'faml'
+gem 'bcrypt', '3.1.7'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
