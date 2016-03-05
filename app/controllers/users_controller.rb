@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :login_check, except: [:show]
-  before_action :user_check, except: [:new]
+  before_action :user_check, except: [:new, :create]
 
   def new
     @user = User.new
