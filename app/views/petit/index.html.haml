@@ -8,3 +8,18 @@
     ログイン
   %p
     サインアップ
+
+#demo
+  %p
+    {{lastName}} {{firstName}}
+  %p
+    %input{"v-model" => "lastName"}/
+    %input{"v-model" => "firstName"}/
+
+  %br
+  %br
+
+  %p
+    {{message}}
+  %p
+    %button.btn.btn-primary{"v-on" => "click: execute"} 実行
