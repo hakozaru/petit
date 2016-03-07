@@ -4,22 +4,11 @@
 
   %p
     Petitでブログを始めよう。
-  %p
-    ログイン
-  %p
-    サインアップ
 
-#demo
-  %p
-    {{lastName}} {{firstName}}
-  %p
-    %input{"v-model" => "lastName"}/
-    %input{"v-model" => "firstName"}/
-
-  %br
-  %br
-
-  %p
-    {{message}}
-  %p
-    %button.btn.btn-primary{"v-on" => "click: execute"} 実行
+  #getting_started
+    %p
+      %button{"v-on:click": "getLoginForm"}
+        LogIn
+    %p
+      %button{"v-on:click": "getSignupForm"}
+        SignUp
