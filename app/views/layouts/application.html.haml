@@ -7,11 +7,20 @@
     = csrf_meta_tags
 
   %body
-  - flash.each do |flash_message, flash|
-    %div{class: flash_message}= flash
+    #container
+      - flash.each do |flash_message, flash|
+        %div{class: flash_message}= flash
 
-  - if logged_in?
-    = link_to "profile", current_user
-    = link_to "logout", signout_path
+      %header#header
+        %ul
+          -#%li#petit petit
+          - if logged_in?
+            %li= link_to "マイページ", current_user
+            %li= link_to "ログアウト", signout_path
 
-  = yield
+      #main
+        = yield
+
+    %footer#footer
+      %section.wrapper
+        フッター
