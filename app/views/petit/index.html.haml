@@ -7,8 +7,10 @@
 
   #getting_started
     %p
-      %button{"v-on:click": "getLoginForm"}
-        LogIn
-    %p
-      %button{"v-on:click": "getSignupForm"}
-        SignUp
+      %a{ class: "login_button", "v-on:click": "getLoginForm" } LogIn
+      %a{ class: "signup_button", "v-on:click": "getSignupForm" } SignUp
+
+      #button_login
+        TEXT
+      #button_signup
+        TEXT

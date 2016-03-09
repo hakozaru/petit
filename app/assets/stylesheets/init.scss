@@ -1,0 +1,27 @@
+//  ボタン初期化設定
+#getting_started a {
+  display: inline-block;
+  width: 200px;
+  height: 54px;
+  text-align: center;
+  text-decoration: none;
+  line-height: 54px;
+  outline: none;
+  border-radius: 5px;
+}
+#getting_started a::before,
+#getting_started a::after {
+  position: absolute;
+  z-index: -1;
+  display: block;
+  content: '';
+}
+#getting_started a,
+#getting_started a::before,
+#getting_started a::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}

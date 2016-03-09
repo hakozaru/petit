@@ -13,7 +13,6 @@
 
       %header#header
         %ul
-          -#%li#petit petit
           - if logged_in?
             %li= link_to "マイページ", current_user
             %li= link_to "ログアウト", signout_path
