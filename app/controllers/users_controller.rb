@@ -22,7 +22,7 @@ class UsersController < ApplicationController
           flash.now["error_#{i+1}"] = e
         end
       end
-      render 'new'
+      render 'petit/index'
     end
   end
 

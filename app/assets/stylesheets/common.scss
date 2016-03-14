@@ -1,22 +1,9 @@
 // サイト全体
 body {
-  background-image: image-url("bg_main.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   color: #555;
   font: 17px/1.2 Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" , "Meiryo UI" , "メイリオ" , Meiryo , "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
   margin: 0px;
   padding: 0px;
-}
-
-#container {
-  width: 900px;
-  height: 100vh;
-  margin: 0 auto;
-  word-wrap: break-word;
-  //背景色付け＆透過
-  //background-color: rgba(255, 255, 255, 0.3);
 }
 
 // ヘッダ
@@ -36,6 +23,20 @@ body {
 }
 
 // メインコンテンツ
+#container {
+  width: 900px;
+  height: 100vh;
+  margin: 0 auto;
+  word-wrap: break-word;
+}
+
+.petit_index {
+  background-image: image-url("bg_main.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 #main {
   width: 100%;
   height: 100vh;
@@ -58,6 +59,7 @@ body {
     width: 500px;
     margin: 0 auto;
     padding-bottom: 10px;
+    padding-top: 10px;
   }
 }
 
@@ -90,6 +92,65 @@ body {
   margin: 0 auto;
   width: 500px;
   text-align: center;
+}
+
+input[type="text"], input[type="password"] {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+input[type="submit"] {
+  font-weight: normal;
+  background-color: rgba(102, 102, 102, 0.3);
+  color: #fff;
+}
+
+.login_group {
+  width: 400px;
+  height: 80px;
+  margin: 0 auto;
+}
+
+.label_name {
+  float: left;
+  width: 180px;
+  height: 40px;
+  padding-right: 20px;
+  text-align: right;
+  label {
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+  }
+}
+
+.label_pass {
+  float: left;
+  width: 180px;
+  height: 40px;
+  padding-right: 20px;
+  text-align: right;
+  label {
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+  }
+}
+
+.form_name {
+  float: right;
+  width: 200px;
+  height: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.form_pass {
+  float: right;
+  width: 200px;
+  height: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 // フッタ

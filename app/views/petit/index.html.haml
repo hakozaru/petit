@@ -11,6 +11,34 @@
       %a{ class: "signup_button", "v-on:click": "getSignupForm" } SignUp
 
       #button_login
-        TEXT
+        = form_for :session, url: signin_path do |f|
+          .login_group
+            .label_name
+              = f.label :name
+            .form_name
+              = f.text_field :name
+            .label_pass
+              = f.label :password
+            .form_pass
+              = f.password_field :password
+          .submit_button
+            %p
+              = f.submit 'Login'
+
       #button_signup
-        TEXT
+        = form_for @user do |f|
+          .login_group
+            .label_name
+              = f.label :name
+            .form_name
+              = f.text_field :name
+            .label_pass
+              = f.label :password
+            .form_pass
+              = f.password_field :password
+          %p
+            = f.submit 'SignUp'
+
+- # application.htmlにあると、could not find elements エラーが発生し続けるので、ここに移動した
+- # また、head内にあると、bodyが読み込まれる前にJSが読み込まれてしまい、ログアウト後にトップページのボタンが動かない。
+= javascript_include_tag 'application', 'data-turbolinks-track': true

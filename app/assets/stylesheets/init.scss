@@ -1,4 +1,4 @@
-//  ボタン初期化設定
+//  ボタン初期化設定 ----------------------
 #getting_started a {
   display: inline-block;
   width: 200px;
@@ -24,4 +24,23 @@
   box-sizing: border-box;
   -webkit-transition: all .3s;
   transition: all .3s;
+}
+
+// フォーム初期化設定 ----------------------
+input {
+  width: 150px;
+  height: 30px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 5px;
 }
