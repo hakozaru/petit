@@ -1,16 +1,35 @@
 $ ->
+  # トップページのログイン、サインアップボタン動作用
   start_petit = new Vue(
     el: "#getting_started"
-    data:
-      demodata: "demodata"
     methods:
       getSignupForm: ->
-        console.log("test")
-        $("#button_signup").slideToggle(150);
-        #$(".login_button").slideToggle(0.01);
+        if $('#button_login').css('display') == 'none'
+          $("#button_signup").animate { opacity: 'toggle' }, { duration: 300, easing: 'swing' }
+        else
+          $("#button_login").animate { opacity: 'hide' }, { duration: 300, easing: 'swing' }
+          # タイマ処理
+          end_count = 0
+          interval = setInterval((->
+            end_count++
+            # タイマリセット
+            if end_count == 3
+              clearInterval interval
+              $("#button_signup").animate { opacity: 'toggle' }, { duration: 300, easing: 'swing' }
+          ), 100)
 
       getLoginForm: ->
-        console.log("test2")
-        $("#button_login").slideToggle(150);
-        #$(".signup_button").slideToggle(0.01);
+        if $('#button_signup').css('display') == 'none'
+          $("#button_login").animate { opacity: 'toggle' }, { duration: 300, easing: 'swing' }
+        else
+          $("#button_signup").animate { opacity: 'hide' }, { duration: 300, easing: 'swing' }
+          # タイマ処理
+          end_count = 0
+          interval = setInterval((->
+            end_count++
+            # タイマリセット
+            if end_count == 3
+              clearInterval interval
+              $("#button_login").animate { opacity: 'toggle' }, { duration: 300, easing: 'swing' }
+          ), 100)
   )
