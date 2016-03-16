@@ -5,7 +5,7 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': true
     = csrf_meta_tags
 
-  %body{ class: @body_bg }
+  %body{ class: @body }
     #container
       - flash.each do |flash_message, flash|
         %div{class: flash_message}= flash
@@ -19,6 +19,6 @@
       #main
         = yield
 
-    %footer#footer
+    %footer{ class: @footer }
       %section.wrapper
         フッター

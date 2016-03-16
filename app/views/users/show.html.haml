@@ -1,7 +1,6 @@
 %p
-  User
-  = params[:id].to_s
-  Page !
+  = "Welcome #{@user.name} !"
+
 
   %p
     = link_to "your posts", user_posts_path(@user)
