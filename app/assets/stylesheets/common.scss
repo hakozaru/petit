@@ -10,17 +10,35 @@ body {
 // ヘッダ
 #header {
   width: 100%;
-  height: 50px;
-  margin-bottom: 15px;
+  height: 40px;
   ul {
+    width: 900px;
+    height: 40px;
     margin: 0px;
     list-style-type: none;
     padding-left: 0;
+    li {
+      float: left;
+      margin: 10px 10px 10px 0px;
+      a {
+        text-decoration: none;
+        color: #333;
+        transition: 0.2s;
+        font-size: 15px;
+        &:hover {
+          color: #3C9C3B;
+        }
+      }
+    }
   }
-  li {
-    float: left;
-    margin: 10px 10px 10px 0px;
-  }
+}
+
+#welcome_msg {
+  width: 690px;
+  margin: 10px 0px 10px 0px;
+  text-align: right;
+  float: right;
+  font-size: 15px;
 }
 
 // メインコンテンツ

@@ -8,13 +8,15 @@
   %body{ class: @body }
     #container
       - flash.each do |flash_message, flash|
-        %div{class: flash_message}= flash
+        %div{ class: flash_message }= flash
 
       %header#header
-        %ul
-          - if logged_in?
+        - if logged_in?
+          %ul
             %li= link_to "マイページ", current_user
             %li= link_to "ログアウト", signout_path
+            %li#welcome_msg
+              = "こんにちわ #{@user.name} さん !"
 
       #main
         = yield
