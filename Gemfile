@@ -43,7 +43,6 @@ group :development, :test do
   gem 'pry-rails'
   gem 'hirb'
   gem 'hirb-unicode' # => HirbのUnicode対応版。日本語が入っていても結果がずれないようになります。
-  gem 'pry-rails'
 end
 
 group :test do
