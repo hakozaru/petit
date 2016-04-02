@@ -1,17 +1,26 @@
 !!!
 %html
   %head
-    %title Petit
+    %title ミニブログ Petit(プチ)
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': true
-    = javascript_include_tag 'application', 'data-turbolinks-track': true
     = csrf_meta_tags
 
-  %body
-  - flash.each do |flash_message, flash|
-    %div{class: flash_message}= flash
+  %body{ class: @body }
+    #container
+      - flash.each do |flash_message, flash|
+        %div{ class: flash_message }= flash
 
-  - if logged_in?
-    = link_to "profile", current_user
-    = link_to "logout", signout_path
+      %header#header
+        - if logged_in?
+          %ul
+            %li= link_to "マイページ", current_user
+            %li= link_to "ログアウト", signout_path
+            %li#welcome_msg
+              = "こんにちわ #{@user.name} さん !"
 
-  = yield
+      #main
+        = yield
+
+    %footer{ class: @footer }
+      %section.wrapper
+        フッター

@@ -1,0 +1,185 @@
+// サイト全体
+body {
+  color: #555;
+  background-color: #E5E5E5;
+  font: 17px/1.2 Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" , "Meiryo UI" , "メイリオ" , Meiryo , "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+// ヘッダ
+#header {
+  width: 100%;
+  height: 40px;
+  ul {
+    width: 900px;
+    height: 40px;
+    margin: 0px;
+    list-style-type: none;
+    padding-left: 0;
+    li {
+      float: left;
+      margin: 10px 10px 10px 0px;
+      a {
+        text-decoration: none;
+        color: #333;
+        transition: 0.2s;
+        font-size: 15px;
+        &:hover {
+          color: #468FC4;
+        }
+      }
+    }
+  }
+}
+
+#welcome_msg {
+  width: 690px;
+  margin: 10px 0px 10px 0px;
+  text-align: right;
+  float: right;
+  font-size: 15px;
+}
+
+// メインコンテンツ
+#container {
+  width: 900px;
+  height: 100vh;
+  margin: 0 auto;
+  word-wrap: break-word;
+}
+
+.petit_index {
+  background-image: image-url("bg_main.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#main {
+  width: 100%;
+  height: 100vh;
+}
+
+// トップページ
+.index {
+  h1 {
+    text-align: center;
+    font-size: 70px;
+    font-weight: bold;
+    color: #ffffff;
+    width: 500px;
+    margin: 0 auto;
+    padding-bottom: 10px;
+  }
+  p {
+    text-align: center;
+    font-weight: bold;
+    width: 500px;
+    margin: 0 auto;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+}
+
+.login_button, .signup_button {
+  font-weight: normal;
+  background-color: rgba(102, 102, 102, 0.3);
+  color: #fff;
+}
+.login_button:hover {
+  background-color: rgba(60, 156, 59, 0.5);
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+
+.signup_button:hover {
+  background-color: rgba(82, 158, 204, 0.6);
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+
+#button_login {
+  display: none;
+  margin: 0 auto;
+  width: 500px;
+  text-align: center;
+}
+
+#button_signup {
+  display: none;
+  margin: 0 auto;
+  width: 500px;
+  text-align: center;
+}
+
+input[type="text"], input[type="password"] {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+input[type="submit"] {
+  font-weight: normal;
+  background-color: rgba(102, 102, 102, 0.3);
+  color: #fff;
+}
+
+.login_group {
+  width: 400px;
+  height: 80px;
+  margin: 0 auto;
+}
+
+.label_name {
+  float: left;
+  width: 180px;
+  height: 40px;
+  padding-right: 20px;
+  text-align: right;
+  label {
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+  }
+}
+
+.label_pass {
+  float: left;
+  width: 180px;
+  height: 40px;
+  padding-right: 20px;
+  text-align: right;
+  label {
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+  }
+}
+
+.form_name {
+  float: right;
+  width: 200px;
+  height: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.form_pass {
+  float: right;
+  width: 200px;
+  height: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+// フッタ
+.footer_index {
+  width: 100%;
+  height: 400px;
+  background-color: #333333;
+}
+
+.wrapper {
+  width: 900px;
+  margin: 0 auto;
+}
