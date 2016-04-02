@@ -7,8 +7,8 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'signup' => 'users#new'
-  get 'signin' => 'sessions#new'
+  #get 'signup' => 'users#new'
+  #get 'signin' => 'sessions#new'
   post 'signin' => 'sessions#create'
   get 'signout' => 'sessions#destroy'
 end
