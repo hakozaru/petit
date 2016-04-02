@@ -20,3 +20,6 @@
 %br
 
 = link_to 'New Post', new_user_post_path
+
+- # JS読み込みしないとDELETEが使えない
+= javascript_include_tag 'application', 'data-turbolinks-track': true
