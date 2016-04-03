@@ -1,0 +1,17 @@
+%h1 投稿一覧
+
+%table
+  %thead
+    %tr
+      %th タイトル
+      %th 作成者
+      %th 内容
+
+  %tbody
+    - @posts.each do |post|
+      %tr
+        %td= post.title
+        %td= post.name
+        %td= post.tfield
+
+%br

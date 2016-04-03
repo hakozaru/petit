@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :find_user, only: [:index, :show, :new, :edit, :create]
-  before_action :user_check
+  before_action :find_user, only: [:index, :show, :new, :edit, :create, :user_page]
+  before_action :user_check, except: [:user_page]
+  before_action :login_check, except: [:user_page]
 
   def index
     @posts = Post.where(user_id: session[:user_id]).all
@@ -47,6 +48,14 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     redirect_to user_posts_path
+  end
+
+  def user_page
+    @posts = Post.where(user_id: params[:user_id])
+    if @posts.blank?
+      flash[:could_not_find_post] = "記事が見つかりません"
+      redirect_to root_path
+    end
   end
 
   private
