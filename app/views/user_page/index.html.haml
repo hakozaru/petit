@@ -17,7 +17,7 @@
             = "[作：#{post.created_at.to_s.split(" ").first}] [更：#{post.updated_at.to_s.split(" ").first}]"
 
         .dialy_body<
-          = post.tfield
+          = simple_format(post.tfield)
 
         .dialy_tag
           - if post.try(:tag)

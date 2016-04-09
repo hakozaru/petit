@@ -12,7 +12,10 @@
       %tr
         %td= post.title
         %td= post.name
-        %td= post.tfield
+        - if post.tfield.split("").count > 15
+          %td= "#{post.tfield[0..15]} ..."
+        - else
+          %td= post.tfield
         %td= link_to 'Show', user_post_path(@user, post)
         %td= link_to 'Edit', edit_user_post_path(@user, post)
         %td= link_to 'Destroy', user_post_path(@user, post), method: :delete, data: { :confirm => 'Are you sure?' }
