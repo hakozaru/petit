@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   post 'signin' => 'sessions#create'
   get 'signout' => 'sessions#destroy'
 
-  get '/:username' => 'posts#user_page', as: :user_page
+  get '/:username' => 'user_page#index', as: :user_page
 end
