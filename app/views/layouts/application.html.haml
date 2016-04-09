@@ -19,7 +19,7 @@
             %li#welcome_msg
               = "こんにちわ #{@user.name} さん !"
 
-      #main
+      %div{ class: @main }
         = yield
 
     %footer{ class: @footer }

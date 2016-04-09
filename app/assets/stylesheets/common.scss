@@ -11,7 +11,7 @@ body {
 // ヘッダ
 #header {
   width: 100%;
-  height: 40px;
+  height: 100%;
   ul {
     width: 900px;
     height: 40px;
@@ -45,14 +45,9 @@ body {
 // メインコンテンツ
 #container {
   width: 900px;
-  height: 100vh;
+  //height: 100vh; これ消したらログインして最初の画面だけ、他のページと比べて中央位置がおかしくなった。 謎
   margin: 0 auto;
   word-wrap: break-word;
-}
-
-#main {
-  width: 100%;
-  height: 100vh;
 }
 
 // トップページ
@@ -169,5 +164,6 @@ input[type="submit"] {
 // フッタ
 .wrapper {
   width: 900px;
+  height: 100px;
   margin: 0 auto;
 }
