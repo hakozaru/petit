@@ -20,10 +20,10 @@ class UsersController < ApplicationController
     else
       if @user.errors.any?
         @user.errors.full_messages.each_with_index do |e, i|
-          flash.now["error_#{i+1}"] = e
+          flash["error_#{i+1}"] = e
         end
       end
-      render 'petit/index'
+      redirect_to root_path
     end
   end
 
