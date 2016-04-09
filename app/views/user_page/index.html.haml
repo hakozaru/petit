@@ -1,0 +1,26 @@
+- if @posts.blank?
+  %h1 まだ投稿がありません
+
+- else
+  %h1 投稿一覧
+
+  .dialy_container
+    - @posts.each do |post|
+      .dialy_main
+        .dialy_header
+          %strong= post.title
+
+        .dialy_date<
+          - if post.created_at.to_date.to_s == post.updated_at.to_date.to_s
+            = "[作：#{post.created_at.to_s.split(" ").first}]"
+          - else
+            = "[作：#{post.created_at.to_s.split(" ").first}] [更：#{post.updated_at.to_s.split(" ").first}]"
+
+        .dialy_body<
+          = simple_format(post.tfield)
+
+        .dialy_tag
+          - if post.try(:tag)
+            = post.tag
+          - else
+            = "-"

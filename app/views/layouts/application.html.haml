@@ -13,12 +13,13 @@
       %header#header
         - if logged_in?
           %ul
-            %li= link_to "マイページ", current_user
+            %li= link_to "管理ページ", current_user
+            %li= link_to "マイブログ", user_page_path(user_name)
             %li= link_to "ログアウト", signout_path
             %li#welcome_msg
               = "こんにちわ #{@user.name} さん !"
 
-      #main
+      %div{ class: @main }
         = yield
 
     %footer{ class: @footer }

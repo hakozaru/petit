@@ -1,9 +1,6 @@
 class SessionsController < ApplicationController
   skip_before_action :login_check
 
-  def new
-  end
-
   def create
     @user = User.find_by(name: params[:session][:name])
     if @user && @user.authenticate(params[:session][:password])
@@ -11,8 +8,8 @@ class SessionsController < ApplicationController
       flash[:success] = 'Welcome !'
       redirect_to @user
     else
-      flash.now[:invalid] = 'ログインに失敗しました'
-      render 'new'
+      flash[:invalid] = 'ログインに失敗しました'
+      redirect_to root_path
     end
   end
 

@@ -1,7 +1,8 @@
+// ページ全てに適用される共通のcssを記述する
+
 // サイト全体
 body {
   color: #555;
-  background-color: #E5E5E5;
   font: 17px/1.2 Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" , "Meiryo UI" , "メイリオ" , Meiryo , "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
   margin: 0px;
   padding: 0px;
@@ -10,7 +11,7 @@ body {
 // ヘッダ
 #header {
   width: 100%;
-  height: 40px;
+  height: 100%;
   ul {
     width: 900px;
     height: 40px;
@@ -34,7 +35,7 @@ body {
 }
 
 #welcome_msg {
-  width: 690px;
+  width: 630px;
   margin: 10px 0px 10px 0px;
   text-align: right;
   float: right;
@@ -44,25 +45,14 @@ body {
 // メインコンテンツ
 #container {
   width: 900px;
-  height: 100vh;
+  //height: 100vh; これ消したらログインして最初の画面だけ、他のページと比べて中央位置がおかしくなった。 謎
   margin: 0 auto;
   word-wrap: break-word;
 }
 
-.petit_index {
-  background-image: image-url("bg_main.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-#main {
-  width: 100%;
-  height: 100vh;
-}
-
 // トップページ
 .index {
+  padding-top: 70px;
   h1 {
     text-align: center;
     font-size: 70px;
@@ -173,13 +163,8 @@ input[type="submit"] {
 }
 
 // フッタ
-.footer_index {
-  width: 100%;
-  height: 400px;
-  background-color: #333333;
-}
-
 .wrapper {
   width: 900px;
+  height: 100px;
   margin: 0 auto;
 }

@@ -1,8 +1,7 @@
-= form_for ([@user, @post]) do |f|
+= form_for ([user, post]) do |f|
 
   .field
-    = f.label :name
-    = f.text_field :name
+    = f.hidden_field :name, value: user.name
 
   .field
     = f.label :title
@@ -10,7 +9,7 @@
 
   .field
     = f.label :tfield
-    = f.text_field :tfield
+    = f.text_area :tfield, rows: 20, cols: 100
 
   .actions
     = f.submit 'Save'

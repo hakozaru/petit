@@ -7,8 +7,9 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'signup' => 'users#new'
-  get 'signin' => 'sessions#new'
   post 'signin' => 'sessions#create'
   get 'signout' => 'sessions#destroy'
+
+  # 全体公開用ページ
+  get '/:username' => 'user_page#index', as: :user_page
 end

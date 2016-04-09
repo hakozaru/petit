@@ -1,18 +1,21 @@
-%h1 Listing posts
+%h1 投稿一覧
 
 %table
   %thead
     %tr
-      %th title
-      %th name
-      %th tfield
+      %th タイトル
+      %th 作成者
+      %th 内容
 
   %tbody
     - @posts.each do |post|
       %tr
         %td= post.title
         %td= post.name
-        %td= post.tfield
+        - if post.tfield.split("").count > 15
+          %td= "#{post.tfield[0..15]} ..."
+        - else
+          %td= post.tfield
         %td= link_to 'Show', user_post_path(@user, post)
         %td= link_to 'Edit', edit_user_post_path(@user, post)
         %td= link_to 'Destroy', user_post_path(@user, post), method: :delete, data: { :confirm => 'Are you sure?' }
@@ -20,3 +23,6 @@
 %br
 
 = link_to 'New Post', new_user_post_path
+
+- # JS読み込みしないとDELETEが使えない
+= javascript_include_tag 'application', 'data-turbolinks-track': true

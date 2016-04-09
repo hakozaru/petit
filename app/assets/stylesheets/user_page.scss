@@ -1,0 +1,39 @@
+// ブログ公開ページ用css
+.dialy_main {
+  width: 600px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.dialy_header {
+  padding:10px 0px 10px 10px;
+  border: 1px solid;
+  border-radius: 5px 5px 0px 0px;
+  border-color: #dddddd;
+  background-color: #EAFFEA;
+}
+
+.dialy_date {
+  text-align: right;
+  padding:5px 10px 5px 0px;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-color: #dddddd;
+}
+
+.dialy_body {
+  padding:5px 0px 5px 10px;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-color: #dddddd;
+}
+
+.dialy_tag {
+  text-align: right;
+  padding:5px 10px 5px 0px;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  border-radius: 0px 0px 5px 5px;
+  border-color: #dddddd;
+}

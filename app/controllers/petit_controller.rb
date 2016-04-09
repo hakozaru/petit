@@ -9,8 +9,9 @@ class PetitController < ApplicationController
       # ユーザー登録用
       @user = User.new
 
-      # トップページだけbodyにクラス追加して、背景を表示する
+      # bodyなどにクラス追加
       @body = "petit_index"
+      @main = "main_index"
       @footer = "footer_index"
     end
   end

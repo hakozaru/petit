@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :find_user, only: [:index, :show, :new, :edit, :create]
   before_action :user_check
+  before_action :login_check
 
   def index
     @posts = Post.where(user_id: session[:user_id]).all
