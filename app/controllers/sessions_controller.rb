@@ -11,8 +11,8 @@ class SessionsController < ApplicationController
       flash[:success] = 'Welcome !'
       redirect_to @user
     else
-      flash.now[:invalid] = 'ログインに失敗しました'
-      render 'new'
+      flash[:invalid] = 'ログインに失敗しました'
+      redirect_to root_path
     end
   end
 
