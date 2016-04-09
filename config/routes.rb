@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   post 'signin' => 'sessions#create'
   get 'signout' => 'sessions#destroy'
 
+  # 全体公開用ページ
   get '/:username' => 'user_page#index', as: :user_page
 end
