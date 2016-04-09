@@ -1,0 +1,18 @@
+// ページによって異なるCSSが適用される場合に使用する
+
+// サイトrootで使用
+.petit_index {
+  background-image: image-url("bg_main.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #E5E5E5;
+}
+
+.footer_index {
+  width: 100%;
+  height: 400px;
+  background-color: #333333;
+}
+
+//
