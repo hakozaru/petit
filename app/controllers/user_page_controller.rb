@@ -3,8 +3,10 @@ class UserPageController < ApplicationController
   skip_before_action :login_check
 
   def index
-    @posts = Post.where(user_id: User.find_by(name: params[:username]).try(:id))
-    if @posts.blank?
+    user_id = User.find_by(name: params[:username]).try(:id)
+    if user_id
+      @posts = Post.where(user_id: user_id)
+    else
       flash[:could_not_find_post] = "お探しのページは見つかりませんでした"
       redirect_to root_path
     end
