@@ -9,6 +9,11 @@ module SessionsHelper
     @current_user ||= User.find_by(id: session[:user_id])
   end
 
+  #ユーザページリンクのために名前が必要
+  def user_name
+    @user_name = User.find_by(id: session[:user_id]).name
+  end
+
   # ユーザーがログインしていればtrue、その他ならfalseを返す
   def logged_in?
     !current_user.nil?
