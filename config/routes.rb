@@ -7,8 +7,9 @@ Rails.application.routes.draw do
     end
   end
 
-  get '/:username' => 'posts#user_page', as: :userpage
-
   post 'signin' => 'sessions#create'
   get 'signout' => 'sessions#destroy'
+
+  get '/:username' => 'posts#user_page', as: :userpage
+
 end
