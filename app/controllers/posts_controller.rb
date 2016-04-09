@@ -51,7 +51,8 @@ class PostsController < ApplicationController
   end
 
   def user_page
-    @posts = Post.where(user_id: params[:user_id])
+    params[:username] = User.find_by(id: session[:user_id]).name
+    @posts = Post.where(user_id: session[:user_id])
     if @posts.blank?
       flash[:could_not_find_post] = "記事が見つかりません"
       redirect_to root_path
