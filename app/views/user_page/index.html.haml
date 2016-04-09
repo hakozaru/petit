@@ -4,18 +4,23 @@
 - else
   %h1 投稿一覧
 
-  %table
-    %thead
-      %tr
-        %th タイトル
-        %th 作成者
-        %th 内容
+  .dialy_container
+    - @posts.each do |post|
+      .dialy_main
+        .dialy_header
+          %strong= post.title
 
-    %tbody
-      - @posts.each do |post|
-        %tr
-          %td= post.title
-          %td= post.name
-          %td= post.tfield
+        .dialy_date<
+          - if post.created_at.to_date.to_s == post.updated_at.to_date.to_s
+            = "[作：#{post.created_at.to_s.split(" ").first}]"
+          - else
+            = "[作：#{post.created_at.to_s.split(" ").first}] [更：#{post.updated_at.to_s.split(" ").first}]"
 
-  %br
+        .dialy_body<
+          = post.tfield
+
+        .dialy_tag
+          - if post.try(:tag)
+            = post.tag
+          - else
+            = "-"
